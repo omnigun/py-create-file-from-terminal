@@ -6,7 +6,8 @@ from datetime import datetime
 def create_file_or_dir() -> None:
 
     terminal_command = sys.argv
-    makedir_index = makefile_index = dir_list = file_name = None
+    makedir_index = makefile_index = 0
+    dir_list = file_name = None
 
     try:
         if "-f" in terminal_command:
@@ -32,9 +33,9 @@ def create_file_or_dir() -> None:
             create_file("", file_name)
 
     except ValueError:
-        print("Bad format command or no-valid value."
-              "\nUse: python create.py -d <directory`s name> -f <filename.txt>"
-              "\nor: python create.py -f <filename.txt> -d <directory`s name>")
+        print("Bad format command or no-valid value.")
+        print("Use: python create.py -d <directory`s name> -f <filename.txt>")
+        print("or: python create.py -f <filename.txt> -d <directory`s name>")
 
 
 def create_path(dirs: list) -> str:
